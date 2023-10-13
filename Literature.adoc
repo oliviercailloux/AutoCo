@@ -1,0 +1,210 @@
+= Literature review
+
+This document reports methodology and results of a (more or less systematic) literature review about automated grading.
+
+I first wanted to benefit from a wide overview of what the literature indicates about automated grading in general; then delve into the more specific topic of automated grading for programming tests. In both cases, I focused on surveys.
+
+For the first (more general) part, I searched with keywords that do not target programming tests, or even that exclude them. This yields a very wide list of results that can’t be examined exhaustively. I focused on the first few hits considered as most relevant by Google Scholar. The goal here was just to have a rough idea of some topics considered in the literature, including some that may not have occurred to me, as a mind opener.
+
+The second part deals with our subject, namely, automated assessment of programming skills.
+
+== Keyword tests
+Let’s have a quick look at the understanding of some terms, just to set up our mind about the meaning of a few possibly relevant keywords.
+
+* autograde: https://www-sciencedirect-com.proxy.bu.dauphine.fr/search?tak=autograde[1 result], irrelevant
+* autocorrection: https://www-sciencedirect-com.proxy.bu.dauphine.fr/search?tak=autocorrection[13 results], all irrelevant
+* automatic correction https://www-sciencedirect-com.proxy.bu.dauphine.fr/search?tak=%22automatic%20correction%22[138 results], two vaguely relevant uses of that term within the first 30 hits (https://doi.org/10.1016/j.sbspro.2012.02.013[Automatically correcting adverb placement errors in the writings of French users of English] and https://doi.org/10.1016/j.sbspro.2014.05.083[Computer-assisted Revision in Spanish Academic Texts: Peer-assessment]). The term suggests (helping) people correcting themselves, not grading them, it seems.
+* automatic grading https://www-sciencedirect-com.proxy.bu.dauphine.fr/search?tak=%22automatic%20grading%22[97 results]
+
+== General surveys about automated assessment
+=== Raw search results
+Most searches here were done using ScienceDirect (because I had not thought about Scopus at that time); then Google Scholar. I then focused on the latter as it seems to cover a wider range of sources than the alternatives I thought about (Elsevier or Springer or Open access databases).
+
+I also realized later that I could have included “Computer Based Assessment” (CBA) as a keyword.
+
+survey AND (automatic OR automated OR automating) AND (grading OR evaluation OR correction OR assessment)
+
+* https://www-sciencedirect-com.proxy.bu.dauphine.fr/search?tak=survey%20AND%20%28automatic%20OR%20automated%29%20AND%20%28grading%20OR%20evaluation%20OR%20correction%20OR%20assessment%29[ScienceDirect]: 1576 results
+
+survey AND (automatic OR automated OR automating) AND (grading OR evaluation OR correction OR assessment) AND (student OR learn OR exam)
+
+* ScienceDirect: can’t implement it, 8 boolean connectors per field MAX.
+* ScienceDirect, https://www-sciencedirect-com.proxy.bu.dauphine.fr/search?tak=survey%20AND%20%28automatic%20OR%20automated%29%20AND%20%28grading%20OR%20evaluation%20OR%20correction%20OR%20assessment%29%20AND%20%28student%20OR%20exam%29[survey AND (automatic OR automated) AND (grading OR evaluation OR correction OR assessment) AND (student OR exam)]: 58 results.
+
+(survey OR review) AND (automatic OR automated OR automating) AND (grading OR evaluation OR correction OR assessment) AND (student OR learn OR exam)
+
+* ScienceDirect, https://www-sciencedirect-com.proxy.bu.dauphine.fr/search?tak=%28survey%20OR%20review%29%20AND%20%28automatic%20OR%20automated%29%20AND%20%28grading%20OR%20evaluation%20OR%20correction%20OR%20assessment%29&qs=student%20OR%20exam[(survey OR review) AND (automatic OR automated) AND (grading OR evaluation OR correction OR assessment) AND full text contains (student OR exam)]: 866 results. 146 if checking Review articles.
+
+(survey OR review) AND (automatic OR automated OR automating) AND (grading OR evaluation OR correction OR assessment) AND (student OR learn OR exam OR essay OR assignment)
+
+* ScienceDirect, https://www-sciencedirect-com.proxy.bu.dauphine.fr/search?tak=%28survey%20OR%20review%29%20AND%20%28automatic%20OR%20automated%29%20AND%20%28grading%20OR%20evaluation%20OR%20correction%20OR%20assessment%29&qs=student%20OR%20exam%20OR%20essay[(survey OR review) AND (automatic OR automated) AND (grading OR evaluation OR correction OR assessment) AND full text contains (student OR exam OR essay)]: 884 results.
+* https://www-sciencedirect-com.proxy.bu.dauphine.fr/search?tak=(survey%20OR%20review)%20AND%20(automatic%20OR%20automated)%20AND%20(grading%20OR%20evaluation%20OR%20correction%20OR%20assessment)&qs=student%20OR%20exam%20OR%20essay&articleTypes=REV[(survey OR review) AND (automatic OR automated) AND (grading OR evaluation OR correction OR assessment) AND full text contains (student OR exam OR essay) AND type is Review article]: 150 results (checked exhaustively, all three are below).
+* https://www-sciencedirect-com.proxy.bu.dauphine.fr/search?tak=%28survey%20OR%20review%29%20AND%20%28automatic%20OR%20automated%29%20AND%20%28grading%20OR%20evaluation%20OR%20correction%20OR%20assessment%29&qs=student%20OR%20learn%20OR%20exam%20OR%20essay%20OR%20assignment&articleTypes=REV[(survey OR review) AND (automatic OR automated) AND (grading OR evaluation OR correction OR assessment) AND full text contains (student OR learn OR exam OR essay OR assignment) AND type is Review article]: 393 results (checked exhaustively, missed two initially, all three are below).
+
+(survey OR review) AND (automatic OR automated OR automating) AND (student OR learn OR exam OR essay OR assignment) AND title contains (grading OR evaluation OR correction OR assessment)
+
+* https://www-sciencedirect-com.proxy.bu.dauphine.fr/search?title=grading%20OR%20evaluation%20OR%20correction%20OR%20assessment&tak=%28survey%20OR%20review%29%20AND%20%28automatic%20OR%20automated%29%20AND%20%28student%20OR%20learn%20OR%20exam%20OR%20essay%20OR%20assignment%29[ScienceDirect]: 41 results.
+** _Impact of artificial intelligence on assessment methods in primary and secondary education: Systematic literature review_
+** _Automatic evaluation of open-ended questions for online learning. A systematic mapping_
+** _A decade of code comment quality assessment: A systematic literature review_
+** _Rebooting assessment. Exploring the challenges and benefits of shifting from pen-and-paper to computer in summative assessment_
+** _A systematic literature review on online assessment security: Current challenges and integrity strategies_
+** _Automating assessment of design exams: A case study of novelty evaluation_
+* Scholar, https://scholar.google.com/scholar?q=(intitle%3Agrading+OR+intitle%3Aevaluation+OR+intitle%3Acorrection+OR+intitle%3Aassessment)+AND+(intitle%3Asurvey+OR+intitle%3Areview)+AND+(intext%3Aautomatic+OR+intext%3Aautomated)+AND+(intext%3Astudent+OR+intext%3Alearn+OR+intext%3Aexam+OR+intext%3Aessay+OR+intext%3Aassignment)[(intitle:grading OR intitle:evaluation OR intitle:correction OR intitle:assessment) AND (intitle:survey OR intitle:review) AND (intext:automatic OR intext:automated) AND (intext:student OR intext:learn OR intext:exam OR intext:essay OR intext:assignment)]: about 4710 results. Checked first four pages of results (40) exhaustively (sorted by relevance)
+** _Automated grading of essays: a review_. JG Borade, LD Netak - … : 12th International Conference, IHCI 2020, Daegu …, 2021 - Springer
+** _A survey of automated assessment approaches for programming assignments_. KM Ala-Mutka - Computer science education, 2005 - Taylor & Francis
+** _Automated grading systems for programming assignments: A literature review_. 
+** _Automated evaluation for student argumentative writing: A survey_. X Wang, Y Lee, J Park - arXiv preprint arXiv:2205.04083, 2022 - arxiv.org
+** _Automatic test-based assessment of programming: A review_. C Douce, D Livingstone, J Orwell - Journal on Educational Resources in …, 2005 - dl.acm.org
+** _Automatic question generation and answer assessment: a survey_. B Das, M Majumder, S Phadikar… - Research and Practice …, 2021 - telrp.springeropen.com
+** _Automated Assessment Tools for grading of programming Assignments: A review_. S Nayak, R Agarwal, SK Khatri - 2022 International Conference …, 2022 - ieeexplore.ieee.org
+** _A systematic review of automated writing evaluation systems_. S Huawei, V Aryadoust - Education and Information Technologies, 2023 - Springer
+** _Machine learning approach for automatic short answer grading: A systematic review_. LB Galhardi, JD Brancher - … in Artificial Intelligence-IBERAMIA 2018: 16th …, 2018 - Springer
+** _Review of handbook of automated essay evaluation: Current applications and new directions_. L Zhang - 2014 - scholarspace.manoa.hawaii.edu
+** _Automated short answer grading using deep learning: A survey_. S Bonthu, S Rama Sree… - … : 5th IFIP TC 5, TC 12, WG …, 2021 - Springer
+** _Survey on automated short answer grading with deep learning: from word embeddings to transformers_. S Haller, A Aldea, C Seifert, N Strisciuglio - arXiv preprint arXiv …, 2022 - arxiv.org
+** _Automated assessment in computer science education: A state-of-the-art review_. JC Paiva, JP Leal, Á Figueira - ACM Transactions on Computing …, 2022 - dl.acm.org
+** _Review of Automated Assessment Tools for grading student SQL queries_. S Nayak, R Agarwal, SK Khatri - 2022 International Conference …, 2022 - ieeexplore.ieee.org
+** _A survey on grading format of automated grading tools for programming assignments_. A Agrawal, B Reed - arXiv preprint arXiv:2212.01714, 2022 - arxiv.org
+** _A review of techniques in automatic programming assessment for practical skill test_. A Lajis, SA Baharudin, D Ab Kadir… - Journal of …, 2018 - jtec.utem.edu.my
+** _Programming assignments automatic grading: review of tools and implementations_. JC Caiza, JM Del Alamo - INTED2013 Proceedings, 2013 - library.iated.org
+** _Review of recent systems for automatic assessment of programming assignments_. P Ihantola, T Ahoniemi, V Karavirta… - Proceedings of the 10th …, 2010 - dl.acm.org
+** _Review of automated writing evaluation systems_. S Zhang - Journal of China Computer-Assisted Language …, 2021 - degruyter.com
+** _Automatic evaluation of free text answers: A review_. N Shah, J Pareek - International Conference on Advancements in Smart …, 2022 - Springer
+** _A review on the static analysis approach in the automated programming assessment systems_. KA Rahman, MJ Nordin - 2007 - researchgate.net
+** _Effectiveness of automated writing evaluation systems in school settings: A systematic review of studies from 2000 to 2020_. A Nunes, C Cordeiro, T Limpo… - Journal of Computer …, 2022 - Wiley Online Library
+** _Feedback from automated essay evaluation systems: A review of selected research_. YL Cheung - TESL Reporter, 2015 - ojs-dev.byuh.edu
+** _Framing automatic grading techniques for open-ended questionnaires responses. A short survey._. G Casalino, B Cafarelli, E del Gobbo, L Fontanella… - teleXbe (2), 2021 - ceur-ws.org
+** _Automated code assessment for education: review, classification and perspectives on techniques and tools_. S Combéfis - Software, 2022 - mdpi.com
+** _A review of an information extraction technique approach for automatic short answer grading_. U Hasanah, AE Permanasari… - 2016 1st …, 2016 - ieeexplore.ieee.org
+** _Automated evaluation of short answers: A systematic review_. S Patil, KP Adhiya - … Data Communication Technologies and Internet of …, 2022 - Springer
+** _Embeddings for Automatic Short Answer Grading: A Scoping Review_. M Putnikovic, J Jovanovic - IEEE Transactions on Learning …, 2023 - ieeexplore.ieee.org
+** _Review of Programming Assignments Automated Assessment Systems_. M Tarek, A Ashraf, M Heidar… - 2022 2nd International …, 2022 - ieeexplore.ieee.org
+** _Teacher use of digital technologies for school-based assessment: a scoping review_. CN Blundell - Assessment in Education: Principles, Policy & …, 2021 - Taylor & Francis
+** _A review on trends of programming (algorithm) automated assessment system and it's application_. WY Chang, SS Kim - The Journal of Korean association of …, 2017 - koreascience.kr
+* Scholar, as above but with checking Articles de revue: 2820 results, but misses the Ala-Mutka article. 
+* Scholar, https://scholar.google.com/scholar?q=(intitle%3Agrading+OR+intitle%3Aevaluation+OR+intitle%3Acorrection+OR+intitle%3Aassessment)+AND+(intitle%3Asurvey+OR+intitle%3Areview)+AND+(intext%3Aautomatic+OR+intext%3Aautomated)+AND+(intext%3Astudent+OR+intext%3Alearn+OR+intext%3Aexam+OR+intext%3Aessay+OR+intext%3Aassignment)+-intitle%3Aprogramming[(intitle:grading OR intitle:evaluation OR intitle:correction OR intitle:assessment) AND (intitle:survey OR intitle:review) AND (intext:automatic OR intext:automated) AND (intext:student OR intext:learn OR intext:exam OR intext:essay OR intext:assignment) -intitle:programming]: about 4680 results. (This looks plausible: the previous query with AND intext:programming yields 29 results.) Checked first two pages of results (20) exhaustively (sorted by relevance)
+** _Automated grading of essays: a review_. JG Borade, LD Netak - … : 12th International Conference, IHCI 2020, Daegu …, 2021 - Springer
+** _Automated evaluation for student argumentative writing: A survey_. X Wang, Y Lee, J Park - arXiv preprint arXiv:2205.04083, 2022 - arxiv.org
+** _Automatic question generation and answer assessment: a survey_. B Das, M Majumder, S Phadikar… - Research and Practice …, 2021 - telrp.springeropen.com
+** _A systematic review of automated writing evaluation systems_. S Huawei, V Aryadoust - Education and Information Technologies, 2023 - Springer
+** _Machine learning approach for automatic short answer grading: A systematic review_. LB Galhardi, JD Brancher - … in Artificial Intelligence-IBERAMIA 2018: 16th …, 2018 - Springer
+** _Review of handbook of automated essay evaluation: Current applications and new directions_. L Zhang - 2014 - scholarspace.manoa.hawaii.edu
+** _Automated short answer grading using deep learning: A survey_. S Bonthu, S Rama Sree… - … : 5th IFIP TC 5, TC 12, WG …, 2021 - Springer
+** _Survey on automated short answer grading with deep learning: from word embeddings to transformers_. S Haller, A Aldea, C Seifert, N Strisciuglio - arXiv preprint arXiv …, 2022 - arxiv.org
+** _Automated assessment in computer science education: A state-of-the-art review_. JC Paiva, JP Leal, Á Figueira - ACM Transactions on Computing …, 2022 - dl.acm.org
+** _Review of Automated Assessment Tools for grading student SQL queries_. S Nayak, R Agarwal, SK Khatri - 2022 International Conference …, 2022 - ieeexplore.ieee.org
+** _Review of automated writing evaluation systems_. S Zhang - Journal of China Computer-Assisted Language …, 2021 - degruyter.com
+** _Automatic evaluation of free text answers: A review_. N Shah, J Pareek - International Conference on Advancements in Smart …, 2022 - Springer
+** _Effectiveness of automated writing evaluation systems in school settings: A systematic review of studies from 2000 to 2020_. A Nunes, C Cordeiro, T Limpo… - Journal of Computer …, 2022 - Wiley Online Library
+** _Feedback from automated essay evaluation systems: A review of selected research_. YL Cheung - TESL Reporter, 2015 - ojs-dev.byuh.edu
+
+=== Sorting the results
+Let’s now sort the results listed here above. I added to the list some (one, currently) references which I found while reading some of those articles.
+
+==== Various
+* _Automatic question generation and answer assessment: a survey_. B Das, M Majumder, S Phadikar… - Research and Practice …, 2021 - telrp.springeropen.com.
+* _Advantages and Challenges of Using e-Assessment_. Nuha Alruwais, Gary Wills, and Mike Wald (cited by “Automatic question generation and answer assessment: a survey”). https://doi.org/10.18178/ijiet.2018.8.1.1008[DOI]
+* _Impact of artificial intelligence on assessment methods in primary and secondary education: Systematic literature review_
+* _A decade of code comment quality assessment: A systematic literature review_
+* _Rebooting assessment. Exploring the challenges and benefits of shifting from pen-and-paper to computer in summative assessment_
+* _A systematic literature review on online assessment security: Current challenges and integrity strategies_
+
+==== Essays and open questions
+* _Automatic evaluation of open-ended questions for online learning. A systematic mapping_
+* _Automated grading of essays: a review_. JG Borade, LD Netak - … : 12th International Conference, IHCI 2020, Daegu …, 2021 - Springer.
+* _Automated evaluation for student argumentative writing: A survey_. X Wang, Y Lee, J Park - arXiv preprint arXiv:2205.04083, 2022 - arxiv.org.
+* _A systematic review of automated writing evaluation systems_. S Huawei, V Aryadoust - Education and Information Technologies, 2023 - Springer.
+* _Machine learning approach for automatic short answer grading: A systematic review_. LB Galhardi, JD Brancher - … in Artificial Intelligence-IBERAMIA 2018: 16th …, 2018 - Springer.
+* _Review of handbook of automated essay evaluation: Current applications and new directions_. L Zhang - 2014 - scholarspace.manoa.hawaii.edu.
+* _Automated short answer grading using deep learning: A survey_. S Bonthu, S Rama Sree… - … : 5th IFIP TC 5, TC 12, WG …, 2021 - Springer.
+* _Survey on automated short answer grading with deep learning: from word embeddings to transformers_. S Haller, A Aldea, C Seifert, N Strisciuglio - arXiv preprint arXiv …, 2022 - arxiv.org.
+* _Review of automated writing evaluation systems_. S Zhang - Journal of China Computer-Assisted Language …, 2021 - degruyter.com.
+* _Automatic evaluation of free text answers: A review_. N Shah, J Pareek - International Conference on Advancements in Smart …, 2022 - Springer.
+* _Effectiveness of automated writing evaluation systems in school settings: A systematic review of studies from 2000 to 2020_. A Nunes, C Cordeiro, T Limpo… - Journal of Computer …, 2022 - Wiley Online Library.
+* _Feedback from automated essay evaluation systems: A review of selected research_. YL Cheung - TESL Reporter, 2015 - ojs-dev.byuh.edu.
+
+* _Framing automatic grading techniques for open-ended questionnaires responses. A short survey._. G Casalino, B Cafarelli, E del Gobbo, L Fontanella… - teleXbe (2), 2021 - ceur-ws.org
+* _A review of an information extraction technique approach for automatic short answer grading_. U Hasanah, AE Permanasari… - 2016 1st …, 2016 - ieeexplore.ieee.org
+* _Automated evaluation of short answers: A systematic review_. S Patil, KP Adhiya - … Data Communication Technologies and Internet of …, 2022 - Springer
+* _Embeddings for Automatic Short Answer Grading: A Scoping Review_. M Putnikovic, J Jovanovic - IEEE Transactions on Learning …, 2023 - ieeexplore.ieee.org
+* _Teacher use of digital technologies for school-based assessment: a scoping review_. CN Blundell - Assessment in Education: Principles, Policy & …, 2021 - Taylor & Francis
+
+==== Set aside
+Set aside because of assessment of programming tests (later) or too specific.
+
+* _Automating assessment of design exams: A case study of novelty evaluation_. https://doi.org/10.1016/j.eswa.2021.116108[DOI]. About image analysis for admission into Design schools.
+* _Review of Automated Assessment Tools for grading student SQL queries_. S Nayak, R Agarwal, SK Khatri - 2022 International Conference …, 2022 - ieeexplore.ieee.org.
+* _Automated assessment in computer science education: A state-of-the-art review_. JC Paiva, JP Leal, Á Figueira - ACM Transactions on Computing …, 2022 - dl.acm.org. https://doi.org/10.1145/3513140[DOI].
+* _A survey of automated assessment approaches for programming assignments_. KM Ala-Mutka - Computer science education, 2005 - Taylor & Francis
+* _Automated grading systems for programming assignments: A literature review_. 
+* _Automatic test-based assessment of programming: A review_. C Douce, D Livingstone, J Orwell - Journal on Educational Resources in …, 2005 - dl.acm.org
+* _Automated Assessment Tools for grading of programming Assignments: A review_. S Nayak, R Agarwal, SK Khatri - 2022 International Conference …, 2022 - ieeexplore.ieee.org
+* _A survey on grading format of automated grading tools for programming assignments_. A Agrawal, B Reed - arXiv preprint arXiv:2212.01714, 2022 - arxiv.org
+* _A review of techniques in automatic programming assessment for practical skill test_. A Lajis, SA Baharudin, D Ab Kadir… - Journal of …, 2018 - jtec.utem.edu.my
+* _Review of recent systems for automatic assessment of programming assignments_. P Ihantola, T Ahoniemi, V Karavirta… - Proceedings of the 10th …, 2010 - dl.acm.org
+* _Programming assignments automatic grading: review of tools and implementations_. JC Caiza, JM Del Alamo - INTED2013 Proceedings, 2013 - library.iated.org
+* _A review on the static analysis approach in the automated programming assessment systems_. KA Rahman, MJ Nordin - 2007 - researchgate.net
+* _Automated code assessment for education: review, classification and perspectives on techniques and tools_. S Combéfis - Software, 2022 - mdpi.com
+* _Review of Programming Assignments Automated Assessment Systems_. M Tarek, A Ashraf, M Heidar… - 2022 2nd International …, 2022 - ieeexplore.ieee.org
+* _A review on trends of programming (algorithm) automated assessment system and it's application_. WY Chang, SS Kim - The Journal of Korean association of …, 2017 - koreascience.kr
+
+=== Selected general articles
+_Automatic question generation and answer assessment: a survey_.
+https://doi.org/10.1186/s41039-021-00151-1[DOI].
+Focus on online learning.
+List five recent (2014 to 2020) surveys on automatic question generation and six (2010 to 2018) about automatic answer evaluation.
+Analyze 37 references, sorted by generated question types (open-cloze, multiple-choice, subjective, visual…)
+
+_Advantages and Challenges of Using e-Assessment_. 
+https://doi.org/10.18178/ijiet.2018.8.1.1008[DOI].
+Several definitions of e-assessment and brief history by various actors.
+Provide many references about student and teacher appreciation of e-assessment, and its effects (can be useful!).
+
+_Impact of artificial intelligence on assessment methods in primary and secondary education: Systematic literature review_.
+https://doi.org/10.1016/j.psicoe.2023.06.002[DOI].
+Mention articles about novel fields or aspects of education where AIEd can be applied or are applied, such as acquiring 21st century skills; integrating knowledge of psychology; generating knowledge partners.
+Systematic literature search leads to nine articles about empirical studies related to application of AIEd in secondary school.
+
+_A decade of code comment quality assessment: A systematic literature review_.
+https://doi.org/10.1016/j.jss.2022.111515[DOI].
+Thorough systematic literature review.
+Highlight 21 quality assurance criteria for code quality assessment.
+Observe that precise definitions lack or do not match across studies.
+Studies which attempt to assess quality automatically only focus on a few of those QAs.
+
+_Rebooting assessment. Exploring the challenges and benefits of shifting from pen-and-paper to computer in summative assessment_
+https://doi.org/10.1016/j.edurev.2022.100451[DOI].
+Considers summative assessments (“all things considered”; overall).
+No access to full article.
+Could be interesting to review effects of CBA for this project…
+
+* _A systematic literature review on online assessment security: Current challenges and integrity strategies_.
+https://doi.org/10.1016/j.cose.2021.102544[DOI].
+About why and how students cheat during online assessment and how to counter this.
+“Approximately 60 percent of the students admitted to cheating in online assessments” (Costley 2019)!
+No access to full article.
+
+== Surveys about programming
+=== Raw search results
+title contains (survey OR review) AND 
+AND title contains (grading OR evaluation OR correction OR assessment)
+AND title contains ("computer science" OR programming)
+AND (automatic OR automated OR automating) AND (student OR learn OR exam OR essay OR assignment) 
+* Scholar, https://scholar.google.com/scholar?q=(intitle%3Asurvey+OR+intitle%3Areview)+AND+(intitle%3Agrading+OR+intitle%3Aevaluation+OR+intitle%3Acorrection+OR+intitle%3Aassessment)+AND+(intitle%3Aprogramming+OR+intitle%3A"computer+science")+AND+(intext%3Aautomatic+OR+intext%3Aautomated+OR+intext%3Aautomating)+AND+(intext%3Astudent+OR+intext%3Alearn+OR+intext%3Aexam+OR+intext%3Aessay+OR+intext%3Aassignment)[(intitle:survey OR intitle:review) AND (intitle:grading OR intitle:evaluation OR intitle:correction OR intitle:assessment) AND (intitle:programming OR intitle:"computer science") AND (intext:automatic OR intext:automated OR intext:automating) AND (intext:student OR intext:learn OR intext:exam OR intext:essay OR intext:assignment)]: 37 results.
+** 
+
+title contains (survey OR review) AND 
+AND title contains (grading OR evaluation OR correction OR assessment)
+AND [(title contains ("computer science") AND "computer science" NEAR assignments) OR title contains programming]
+AND (automatic OR automated OR automating) AND (student OR learn OR exam OR essay OR assignment) 
+Practical programming competencies?
+
+== Check
+TODO check with https://www-sciencedirect-com.proxy.bu.dauphine.fr/search?qs=A%20Survey%20of%20Automated%20Assessment%20Approaches%20for%20Programming%20Assignments[this] (Starts with many relevant results!) or the list above.
+
+=== Selected articles
+* Ala-Mutka - A Survey of Automated Assessment Approaches for Programming Assignments (2005)
+** Seems not very useful for our topic, might check software or XP.
+
+
